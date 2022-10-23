@@ -1,0 +1,4 @@
+[] add photos to gallery.data.js
+[] import gallery.data.js to GalleryList component 
+[] create GalleryList component
+[] create GalleryItem component
