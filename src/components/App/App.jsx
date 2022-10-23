@@ -9,13 +9,9 @@ function App() {
   const [galleryList, setGalleryList] = useState([]);
   const [currentPic, setCurrentPic] = useState()
 
-  console.log('current pic is', currentPic)
-
-
   useEffect(() => {
     getGalleryItems();
   }, [])
-
 
     const getGalleryItems = () => {
       console.log('Getting galeryItems')
@@ -43,7 +39,7 @@ function App() {
         <div className = "description">
             {currentPic && (<h3>{currentPic.description}</h3>)}
         </div>
-        <GalleryList galleryList = {galleryList} setCurrentPic = {setCurrentPic}/>
+        <GalleryList galleryList = {galleryList} setCurrentPic = {setCurrentPic} />
       </div>
     );
 }

@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 
 
-function GalleryItem ({gallery, path, setCurrentPic}){
+function GalleryItem ({gallery, path, setCurrentPic, description}){
     const [loveCount, setLoveCount] = useState(0)
 
     const loveBtn = (evt) => {
@@ -17,6 +17,7 @@ function GalleryItem ({gallery, path, setCurrentPic}){
 
     const imgClick = () => {
         setCurrentPic(gallery)
+
     }
 
 
@@ -33,10 +34,11 @@ function GalleryItem ({gallery, path, setCurrentPic}){
 
     return (
         <>
-            <h3>here is a gallery item</h3>
-                <img src={path} onClick = {imgClick}/><br></br>
-                {defaultMessage}
-                <button onClick = {loveBtn}>Love it!</button> 
+            <div></div>
+            <img src={path} onClick = {imgClick}/><br></br>
+            {defaultMessage}
+            {/* {description}<br></br> */}
+            <button onClick = {loveBtn} class="button-62" role="button">💕 Love it! 💕</button>
         </>
     )
     
