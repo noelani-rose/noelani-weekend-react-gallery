@@ -39,7 +39,7 @@ function App() {
         <div className = "description">
             {currentPic && (<h3>{currentPic.description}</h3>)}
         </div>
-        <GalleryList galleryList = {galleryList} setCurrentPic = {setCurrentPic} />
+        <GalleryList galleryList = {galleryList} setCurrentPic = {setCurrentPic} getGalleryItems = {getGalleryItems}/>
       </div>
     );
 }

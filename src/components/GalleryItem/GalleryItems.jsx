@@ -5,11 +5,33 @@ import { useState } from 'react';
 
 
 
-function GalleryItem ({gallery, path, setCurrentPic, description}){
+
+function GalleryItem ({gallery, path, setCurrentPic, description, getGalleryItems}){
+    console.log('gallery is', gallery)
     const [loveCount, setLoveCount] = useState(0)
+
+
+    // const loveBtn = (evt) => {
+    //     evt.preventDefault();
+    //     axios.put(`/gallery/like/${gallery.id}`)
+    //         .then((response) => {
+    //             console.log('response is', response)
+    //             setLoveCount(gallery.likes +1)
+    //             getGalleryItems();     
+                
+    //         })
+    //         .catch((error) => {
+    //             console.log('error loving button', error)
+    //         })
+    //     console.log('in the loveBtn function')
+    //     console.log('the count is', loveCount);
+    // }
+
+
 
     const loveBtn = (evt) => {
         evt.preventDefault();
+        
         console.log('in the loveBtn function')
         console.log('the count is', loveCount);
         setLoveCount(loveCount + 1)
@@ -21,7 +43,7 @@ function GalleryItem ({gallery, path, setCurrentPic, description}){
     }
 
 
-
+    // message 
     let defaultMessage = (<p>No one has loved this yet :( </p>)
 
     if (loveCount === 1){

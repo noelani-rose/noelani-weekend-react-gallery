@@ -1,7 +1,7 @@
 import axios from 'axios';
 import GalleryItem from '../GalleryItem/GalleryItems';
 
-function GalleryList({galleryList, setCurrentPic}){
+function GalleryList({galleryList, setCurrentPic, getGalleryItems}){
     return (
         <>
                 <div className = "imageContainer">
@@ -12,6 +12,7 @@ function GalleryList({galleryList, setCurrentPic}){
                 description = {gallery.description}
                 gallery = {gallery}
                 setCurrentPic = {setCurrentPic}
+                getGalleryItems = {getGalleryItems}
                 />
                 ))}     
             </div> 
