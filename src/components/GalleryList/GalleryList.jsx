@@ -5,14 +5,16 @@ function GalleryList({galleryList, setCurrentPic}){
     return (
         <>
             <p>Gallery goes here</p>
-            {galleryList.map(gallery => (
-            <GalleryItem 
-            key = {gallery.id}
-            path = {gallery.path} 
-            gallery = {gallery}
-            setCurrentPic = {setCurrentPic}
-            />
-            ))}      
+                <div className = "imageContainer">
+                {galleryList.map(gallery => (
+                <GalleryItem 
+                key = {gallery.id}
+                path = {gallery.path} 
+                gallery = {gallery}
+                setCurrentPic = {setCurrentPic}
+                />
+                ))}     
+            </div> 
         </>
 
     )

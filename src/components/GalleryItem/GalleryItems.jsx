@@ -23,16 +23,20 @@ function GalleryItem ({gallery, path, setCurrentPic}){
 
     let defaultMessage = (<p>No one has loved this yet :( </p>)
 
-    if (loveCount > 0){
+    if (loveCount === 1){
+        defaultMessage = (<div>{loveCount} person loved this!</div>)
+    }
+
+    else if (loveCount > 1){
         defaultMessage = (<div>{loveCount} people loved this!</div>)  
     }
 
     return (
         <>
             <h3>here is a gallery item</h3>
-            <img src={path} onClick = {imgClick}/><br></br>
-            {defaultMessage}
-            <button onClick = {loveBtn}>Love it!</button> 
+                <img src={path} onClick = {imgClick}/><br></br>
+                {defaultMessage}
+                <button onClick = {loveBtn}>Love it!</button> 
         </>
     )
     

@@ -34,12 +34,13 @@ function App() {
       })
     }
 
+
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <div>
+        <div className = "description">
             {currentPic && (<h3>{currentPic.description}</h3>)}
         </div>
         <GalleryList galleryList = {galleryList} setCurrentPic = {setCurrentPic}/>
