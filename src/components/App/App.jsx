@@ -50,16 +50,15 @@ function App() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
+            <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <div className = "description">
+        <div>
 
           {/* if current pic then render currentpic description */}
             {/* {currentPic && (<h3>{currentPic.description}</h3>)} */}
         </div>
         <GalleryList 
         galleryList = {galleryList} 
-        setCurrentPic = {setCurrentPic}
         onLike = {onLike}/>
       </div>
     );

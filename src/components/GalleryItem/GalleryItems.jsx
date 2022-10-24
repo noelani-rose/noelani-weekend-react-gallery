@@ -23,7 +23,9 @@ function GalleryItem ({galleryItem, onLike}){
         <>
         {/* img has an onclick, so when it's clicked, imgClick function is ran */}
             <li>
-                <div onClick = {() => setShowImg(!showImg)}>
+                <div className = "imageContentAll">
+                    <div onClick = {() => setShowImg(!showImg)}>
+
                     {
                         showImg ?
                         <img 
@@ -34,14 +36,16 @@ function GalleryItem ({galleryItem, onLike}){
                                 {galleryItem.description}
                             </div>
                     }
-                </div>
-                <div>
-                    <button onClick = {() => onLike(galleryItem.id)} className="button-62" role="button">
+                    </div>
+                
+                    <div>
+                      <button onClick = {() => onLike(galleryItem.id)} className="button-62" role="button">
                         Love it! 💕
-                    </button>
+                      </button>
                     
-                    {defaultMessage}
-                </div>                
+                        {defaultMessage}
+                    </div>     
+                </div>           
             </li>
         </>
     )
@@ -52,22 +56,4 @@ export default GalleryItem;
 
 
 
-// <button onClick = {() => onLike(galleryItem.id)}
 
-// showImg ?
-//     <img src = 
-//     {galleryItem.path}
-//      alt = {galleryItem.description}/>
-//      :
-//      <div>{galleryItem.description}</div>
-
-
-// if galleryitems.likes = 0, render that first div
-// otherwise, render the second div
-// {
-//     galleryItem.likes === 0 ?
-//     <div>'no one loved this'</div>
-//     :
-//     <div>{galleryItem.likes} people loved this</div>
-
-// }

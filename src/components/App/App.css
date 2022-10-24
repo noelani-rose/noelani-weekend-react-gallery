@@ -18,17 +18,18 @@
 }
 
 img{
-  height: 175px;
+  height: 200px;
   margin-top: 2em;
   border-radius: 5px;
 
+
 }
 
-.imageContainer  {
-  float: left;
-  margin-left: 20px;
-  margin-bottom: 20px;
-
+li{
+  display: inline-grid;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid black
 }
 
 

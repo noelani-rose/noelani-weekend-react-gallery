@@ -26,12 +26,5 @@ function GalleryList({galleryList, onLike}){
 export default GalleryList;
 
 
-{/* <ul>
-    {galleryList.map((galleryItem) => (
-        <li>
-            {galleryItem.description}
-        </li>
-    ))}
-</ul> */}
 
 
