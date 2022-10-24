@@ -13,6 +13,8 @@ function App() {
     getGalleryItems();
   }, [])
 
+
+  // function to get the gallery items from data.js
     const getGalleryItems = () => {
       console.log('Getting galeryItems')
       axios({
@@ -21,9 +23,8 @@ function App() {
       })
       .then(response => {
         console.log('the response is', response)
-
+        // only set gallery list to the data property of response 
         setGalleryList(response.data)
-        console.log('gallery list is', galleryList)
       })
       .catch(error => {
         console.log('GETting galleryList failed', error);
@@ -37,6 +38,9 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <div className = "description">
+
+          {/* if current pic then render currentpic description */}
+          {/* how do i get this to runder next to the picture?? */}
             {currentPic && (<h3>{currentPic.description}</h3>)}
         </div>
         <GalleryList galleryList = {galleryList} setCurrentPic = {setCurrentPic} getGalleryItems = {getGalleryItems}/>
