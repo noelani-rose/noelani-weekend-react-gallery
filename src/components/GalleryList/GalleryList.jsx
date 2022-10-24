@@ -1,4 +1,3 @@
-import axios from 'axios';
 import GalleryItem from '../GalleryItem/GalleryItems';
 
 // function takes in gallerylist, set current pic function, and get gallery items function 
@@ -23,10 +22,6 @@ function GalleryList({galleryList, setCurrentPic, getGalleryItems}){
     )
 
 }
-
-
-
-
 
 
 export default GalleryList;

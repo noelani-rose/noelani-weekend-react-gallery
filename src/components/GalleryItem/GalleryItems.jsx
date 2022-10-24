@@ -70,18 +70,4 @@ function GalleryItem ({gallery, path, setCurrentPic, description, getGalleryItem
     
 }
 
-
-
-
-
 export default GalleryItem;
-
-
-    // const loveBtn = (evt) => {
-        // const [loveCount, setLoveCount] = useState(0)
-    //     console.log('in the loveBtn function, love count is');
-    //     console.log('gallery list is', galleryList)
-    //     axios.put(`/like/${evt.target.id}`)
-    //         .then((response) => {
-
-    //         })
