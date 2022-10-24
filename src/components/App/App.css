@@ -25,11 +25,10 @@ img{
 }
 
 .imageContainer  {
-  display: table-row;
-  align-items: center;
-  justify-content: space-evenly;
-  justify-items: center;
-  align-content: stretch;
+  float: left;
+  margin-left: 20px;
+  margin-bottom: 20px;
+
 }
 
 

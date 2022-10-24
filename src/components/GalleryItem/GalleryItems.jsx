@@ -1,73 +1,73 @@
-import axios from "axios";
 import React from "react";
-import GalleryList from "../GalleryList/GalleryList";
 import { useState } from 'react';
 
 
-
-
-function GalleryItem ({gallery, path, setCurrentPic, description, getGalleryItems}){
-    console.log('gallery is', gallery)
-    const [loveCount, setLoveCount] = useState(0)
-
-    // how do i connect this back with the router.put already written in router.js??
-
-    // const loveBtn = (evt) => {
-    //     evt.preventDefault();
-    //     axios.put(`/gallery/like/${gallery.id}`)
-    //         .then((response) => {
-    //             console.log('response is', response)
-    //             setLoveCount(gallery.likes +1)
-    //             getGalleryItems();     
-                
-    //         })
-    //         .catch((error) => {
-    //             console.log('error loving button', error)
-    //         })
-    //     console.log('in the loveBtn function')
-    //     console.log('the count is', loveCount);
-    // }
-
-
-
-    const loveBtn = (evt) => {
-        evt.preventDefault();
-        
-        console.log('in the loveBtn function')
-        console.log('the count is', loveCount);
-        setLoveCount(loveCount + 1)
-    }
-
-    // imgClick function sets the currentPic function to gallery.likes
-    const imgClick = () => {
-        setCurrentPic(gallery)
-
-    }
-
+function GalleryItem ({galleryItem, onLike}){
+    console.log('gallery is', galleryItem)
+    // const [loveCount, setLoveCount] = useState(0)
+    const [showImg, setShowImg] = useState(true);
 
     // message to display when no button has been clicked 
     let defaultMessage = (<p>No one has loved this yet :( </p>)
 
     // if lovecount is 1, then display this 
-    if (loveCount === 1){
-        defaultMessage = (<div>{loveCount} person loved this!</div>)
+    if (galleryItem.likes === 1){
+        defaultMessage = (<p>{galleryItem.likes} person loved this!</p>)
     }
     // if lovecount is over 1, display this
-    else if (loveCount > 1){
-        defaultMessage = (<div>{loveCount} people loved this!</div>)  
+    else if (galleryItem.likes > 1){
+        defaultMessage = (<p>{galleryItem.likes} people loved this!</p>)  
     }
 
     return (
         <>
         {/* img has an onclick, so when it's clicked, imgClick function is ran */}
-            <div></div>
-            <img src={path} onClick = {imgClick}/><br></br>
-            {defaultMessage}
-            {/* {description}<br></br> */}
-            <button onClick = {loveBtn} class="button-62" role="button">💕 Love it! 💕</button>
+            <li>
+                <div onClick = {() => setShowImg(!showImg)}>
+                    {
+                        showImg ?
+                        <img 
+                            src = {galleryItem.path}
+                            alt = {galleryItem.description}/>
+                            :
+                            <div>
+                                {galleryItem.description}
+                            </div>
+                    }
+                </div>
+                <div>
+                    <button onClick = {() => onLike(galleryItem.id)} className="button-62" role="button">
+                        Love it! 💕
+                    </button>
+                    
+                    {defaultMessage}
+                </div>                
+            </li>
         </>
     )
     
 }
 
 export default GalleryItem;
+
+
+
+// <button onClick = {() => onLike(galleryItem.id)}
+
+// showImg ?
+//     <img src = 
+//     {galleryItem.path}
+//      alt = {galleryItem.description}/>
+//      :
+//      <div>{galleryItem.description}</div>
+
+
+// if galleryitems.likes = 0, render that first div
+// otherwise, render the second div
+// {
+//     galleryItem.likes === 0 ?
+//     <div>'no one loved this'</div>
+//     :
+//     <div>{galleryItem.likes} people loved this</div>
+
+// }

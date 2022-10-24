@@ -1,21 +1,20 @@
 import GalleryItem from '../GalleryItem/GalleryItems';
 
 // function takes in gallerylist, set current pic function, and get gallery items function 
-function GalleryList({galleryList, setCurrentPic, getGalleryItems}){
+function GalleryList({galleryList, onLike}){
     return (
         <>
         {/* loop through every item in gallery list and send those props over */}
                 <div className = "imageContainer">
-                {galleryList.map(gallery => (
-                <GalleryItem 
-                key = {gallery.id}
-                path = {gallery.path} 
-                description = {gallery.description}
-                gallery = {gallery}
-                setCurrentPic = {setCurrentPic}
-                getGalleryItems = {getGalleryItems}
-                />
-                ))}     
+                    <ul>
+                        {galleryList.map(galleryItem => (
+                        <GalleryItem 
+                        galleryItem = {galleryItem}
+                        key = {galleryItem.id}
+                        onLike = {onLike}
+                        />
+                        ))} 
+                </ul>    
             </div> 
         </>
 
@@ -26,5 +25,13 @@ function GalleryList({galleryList, setCurrentPic, getGalleryItems}){
 
 export default GalleryList;
 
+
+{/* <ul>
+    {galleryList.map((galleryItem) => (
+        <li>
+            {galleryItem.description}
+        </li>
+    ))}
+</ul> */}
 
 

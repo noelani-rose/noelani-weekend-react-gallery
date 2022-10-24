@@ -28,6 +28,22 @@ function App() {
       .catch(error => {
         console.log('GETting galleryList failed', error);
       })
+    };
+
+    const onLike = (id) => {
+      console.log('onLike function', id);
+      axios({
+        method: 'PUT',
+        url: `/gallery/like/${id}`
+      })
+      .then(response => {
+        console.log('response is,', response)
+        getGalleryItems();
+      })
+      .catch(error => {
+        console.log('error liking pic', error);
+
+      })
     }
 
 
@@ -39,13 +55,16 @@ function App() {
         <div className = "description">
 
           {/* if current pic then render currentpic description */}
-          {/* how do i get this to runder next to the picture?? */}
-            {currentPic && (<h3>{currentPic.description}</h3>)}
+            {/* {currentPic && (<h3>{currentPic.description}</h3>)} */}
         </div>
-        <GalleryList galleryList = {galleryList} setCurrentPic = {setCurrentPic} getGalleryItems = {getGalleryItems}/>
+        <GalleryList 
+        galleryList = {galleryList} 
+        setCurrentPic = {setCurrentPic}
+        onLike = {onLike}/>
       </div>
     );
 }
 
 
 export default App;
+
